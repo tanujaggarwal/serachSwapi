@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <label for="planetsSearch" class="col-sm-3 control-label">Search Planets</label>
+        <div class="col-sm-9">
+            <input type="search" name="planetsSearch" class="form-control" id="planetsSearch" (change)="searchPlanet($event)" placeholder="Enter Planet Name">
+        </div>
+    </div>
+    <div class="row" *ngIf="planetsList.length>0">
+        <ul>
+            <li *ngFor="let item of planetsList">
+                {{item.name}}
+                {{item.population}}
+            </li>
+        </ul>
+    </div>
+    <div class="row" *ngIf="planetsList.length == 0">
+        Nosuch Planets exists
+    </div>
+</div>
